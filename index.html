@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html manifest="scoring2011.manifest">
+<head>
+    <title>FLL 2011 - Food Factor</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.1" />
+    <meta name="apple-mobile-web-app-capable" content="YES" />
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="reset.css" type="text/css" media="screen, projection" />
+
+    <link rel="stylesheet" media="all" href="scoring2011_land.css">
+
+    <!-- If you're here and have IE9, remove the exceptions let me know if the HTML5/CSS3 goodies work -->
+    <!-- Thanks... jayfrancis@aol.com -->
+
+    <!--[if !IE]><!-->
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="scoring2011.css">
+    <link rel="stylesheet" media="all and (orientation:landscape)" href="scoring2011_land.css">
+    <link rel="stylesheet" media="all and (max-device-width: 480px)" href="scoring2011_narrow.css">
+    <!--<![endif]-->    
+    
+    <script language="javascript" type="text/javascript" src="fllScoring2011.js"></script>
+</head>
+<body onload="reset();">
+    <div id="main">
+        <div id="timerText">2:30</div>
+        <button id="startStopButton" type="button" value="start" onclick="timerToggle();">Start</button>
+        <button id="resetButton" type="reset" value="reset" onclick="reset();">Reset</button>
+        <div id="countUp"><input id="countUpButton" type="radio" value="up" onchange="countDirectionChange('up');"/>Count Up</div>
+        <div id="countDown"><input id="countDownButton" type="radio" value="down" onclick="countDirectionChange('down');"/>Count Down</div>
+        <div id="scoreBlock">
+            Score: <div id="scoreText">0</div>
+        </div>
+        <div id="box1">
+            <div id="box1Label" class="BoxLabel">1</div>
+            <div id="box1Title" class="BoxTitle">Good Bacteria</div>
+            <div id="box1Item1" class="BoxItem1">Yellow bacteria in base</div>
+            <select id="goodBacteriaInBase" class="ScoreBox" onchange="checkBacteria(); update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+        <div id="box2">
+            <div id="box2Label" class="BoxLabel">2</div>
+            <div id="box2Title" class="BoxTitle">Farm Fresh Produce</div>
+            <div id="box2Item1" class="BoxItem1">Yellow truck in base</div>
+            <select id="yellowTruckInBase" class="YesNoBox" onchange="update();">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="box3">
+            <div id="box3Label" class="BoxLabel">3</div>
+            <div id="box3Title" class="BoxTitle">Pest Removal</div>
+            <div id="box3Item1" class="BoxItem1">Rats in base</div>
+            <select id="ratsInBase" class="ScoreBox" onchange="update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div id="box4">
+            <div id="box4Label" class="BoxLabel">4</div>
+            <div id="box4Title" class="BoxTitle">Pizza and Ice Cream</div>
+            <div id="box4Item1" class="BoxItem1">Pizza/ice cream in base</div>
+            <select id="pizzaIceCreamInBase" class="ScoreBox" onchange="update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div id="box5">
+            <div id="box5Label" class="BoxLabel">5</div>
+            <div id="box5Title" class="BoxTitle">Fishing</div>
+            <div id="box5Item1" class="BoxItem1">Fish in base</div>
+            <select id="fishInBase" class="ScoreBox" onchange="checkFish('base'); update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <div id="box5Item2" class="BoxItem2">Baby fish on mark</div>
+            <select id="babyFishOnMark" class="YesNoBox" onchange="update();">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="box6">
+            <div id="box6Label" class="BoxLabel">6</div>
+            <div id="box6Title" class="BoxTitle">Disinfect</div>
+            <div id="box6Item1" class="BoxItem1">Dispensers empty</div>
+            <select id="dispensersEmpty" class="ScoreBox" onchange="update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <div id="box6Item2" class="BoxItem2">Bacteria on mat outside base</div>
+            <select id="bacteriaOnMatOutsideBase" class="YesNoBox" onchange="update();">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="box7">
+            <div id="box7Label" class="BoxLabel">7</div>
+            <div id="box7Title" class="BoxTitle">Corn Harvest</div>
+            <div id="box7Item1" class="BoxItem1">Corn...</div>
+            <select id="cornLocation" class="CornBox" onchange="update();">
+                <option value="base">in Base</option>
+                <option value="mat">on Mat</option>
+                <option value="neither">Neither</option>
+            </select>
+        </div>
+        <div id="box8">
+            <div id="box8Label" class="BoxLabel">8</div>
+            <div id="box8Title" class="BoxTitle">Pollution Reversal</div>
+            <div id="box8Item1" class="BoxItem1">Balls touching mat</div>
+            <select id="ballsTouchingMat" class="ScoreBox" onchange="update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div id="box9">
+            <div id="box9Label" class="BoxLabel">9</div>
+            <div id="box9Title" class="BoxTitle">Refrigerated Ground Transport</div>
+            <div id="box9Item1" class="BoxItem1">White trailer...</div>
+            <select id="whiteTrailerLocation" class="TrailerBox" onchange="update();">
+                <option value="clean">Clean w/meat, wheel(s) touching N of line</option>
+                <option value="base">in Base</option>
+                <option value="neither">Neither</option>
+            </select>
+            <div id="box9Item2" class="BoxItem2">Fish in trailer</div>
+            <select id="fishInTrailer" class="ScoreBox" onchange="checkFish('trailer'); update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div id="box10">
+            <div id="box10Label" class="BoxLabel">10</div>
+            <div id="box10Title" class="BoxTitle">Hand Wash</div>
+            <div id="box10Item1" class="BoxItem1">Bacteria in sink</div>
+            <select id="bacteriaInSinkTens" class="ScoreBox" onchange="checkBacteria(); update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <select id="bacteriaInSinkOnes" class="ScoreBox" onchange="checkBacteria(); update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <div id="box10Item2" class="BoxItem2">Virus in sink</div>
+            <select id="virusInSink" class="CornBox" onchange="update();">
+                <option value="0">0</option>
+                <option value="1-8">1-8</option>
+                <option value="9-16">9-16</option>
+            </select>
+        </div>
+        <div id="box11">
+            <div id="box11Label" class="BoxLabel">11</div>
+            <div id="box11Title" class="BoxTitle">Storage Temperature</div>
+            <div id="box11Item1" class="BoxItem1">Thermometer - low temp</div>
+            <select id="thermometerLowTemp" class="YesNoBox" onchange="update();">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="box12">
+            <div id="box12Label" class="BoxLabel">12</div>
+            <div id="box12Title" class="BoxTitle">Cooking Time</div>
+            <div id="box12Item1" class="BoxItem1">Timer - pointer in red zone</div>
+            <select id="timerRedZone" class="YesNoBox" onchange="update();">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="box13">
+            <div id="box13Label" class="BoxLabel">13</div>
+            <div id="box13Title" class="BoxTitle">Groceries</div>
+            <div id="box13Item1" class="BoxItem1">Grocery units on table</div>
+            <select id="groceryUnitsOnTable" class="ScoreBox" onchange="update();">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+        <div id="box14">
+            <div id="box14Label" class="BoxLabel">14</div>
+            <div id="box14Title" class="BoxTitle">Distant Travel</div>
+            <div id="box14Item1" class="BoxItem1">Robot touching East wall</div>        
+            <select id="touchingEastWall" class="YesNoBox" onchange="update();">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="version" onclick="getInfo();">V2.3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,468 @@
+body {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+#main {
+    position: absolute;
+    background-image: url('FLL2011_Score_Sheet_narrow.png');
+    background-repeat: no-repeat;
+    width: 480px;
+    height: 2400px;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+#version {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 0.4em;
+    text-decoration: underline;
+}
+
+.ScoreBox {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.YesNoBox {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    font-size: 1.25em;
+}
+
+.CornBox {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    font-size: 1.25em;
+}
+
+.TrailerBox {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    font-size: 1.25em;
+}
+
+#timerText {
+    position: absolute;
+    color: red;
+    line-height: 1;
+    font-size: 10em;
+    width: 325px;
+    height: 150px;
+    text-align: left;
+    top: 10px;
+    left: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#startStopButton {
+    position: absolute;
+    width: 150px;
+    height: 75px;
+    top: 175px;
+    left: 20px;
+    font-size: 2em;
+}
+
+#countUp {
+    position: absolute;
+    width: 110px;
+    height: 25px;
+    top: 40px;
+    left: 350px;
+    display: inline;
+    font-size: 1em;
+}
+
+#countDown {
+    position: absolute;
+    width: 110px;
+    height: 25px;
+    top: 100px;
+    left: 350px;
+    display: inline;
+    font-size: 1em;
+}
+
+#resetButton {
+    position: absolute;
+    width: 150px;
+    height: 75px;
+    top: 175px;
+    left: 310px;
+    font-size: 2em;
+}
+
+#scoreBlock {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    color: blue;
+    font-size: 5em;
+    top: 250px;
+    left: 40px;
+}
+
+#scoreText {
+    display: inline;
+}
+
+.BoxLabel {
+    position: absolute;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    font-size: 1em;
+}
+
+.BoxTitle {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.BoxItem1 {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    font-size: 1.5em;
+}
+
+.BoxItem2 {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    font-size: 1.5em;
+}
+
+#box1 {
+    position: absolute;
+    top: 375px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box1Label {
+    top: 35px;
+    left: -15px;
+}
+
+#goodBacteriaInBase {
+    top: 55px;
+    left: 350px;
+}
+
+#box2 {
+    position: absolute;
+    top: 500px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box2Label {
+    top: 35px;
+    left: -15px;
+}
+
+#yellowTruckInBase {
+    top: 55px;
+    left: 350px;
+}
+
+#box3 {
+    position: absolute;
+    top: 625px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box3Label {
+    top: 35px;
+    left: -15px;
+}
+
+#ratsInBase {
+    top: 55px;
+    left: 350px;
+}
+
+#box4 {
+    position: absolute;
+    top: 750px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box4Label {
+    top: 35px;
+    left: -15px;
+}
+
+#pizzaIceCreamInBase {
+    top: 55px;
+    left: 350px;
+}
+
+#box5 {
+    position: absolute;
+    top: 875px;
+    left: 20px;
+    width: 440px;
+    height: 150px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box5Label {
+    top: 60px;
+    left: -15px;
+}
+
+#fishInBase {
+    top: 55px;
+    left: 350px;
+}
+
+#babyFishOnMark {
+    top: 105px;
+    left: 350px;
+}
+
+#box6 {
+    position: absolute;
+    top: 1050px;
+    left: 20px;
+    width: 440px;
+    height: 150px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box6Label {
+    top: 60px;
+    left: -15px;
+}
+
+#dispensersEmpty {
+    top: 55px;
+    left: 350px;
+}
+
+#bacteriaOnMatOutsideBase {
+    top: 105px;
+    left: 350px;
+}
+
+#box7 {
+    position: absolute;
+    top: 1225px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box7Label {
+    top: 35px;
+    left: -15px;
+}
+
+#cornLocation {
+    top: 55px;
+    left: 310px;
+}
+
+#box8 {
+    position: absolute;
+    top: 1350px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box8Label {
+    top: 35px;
+    left: -15px;
+}
+
+#ballsTouchingMat {
+    top: 55px;
+    left: 350px;
+}
+
+#box9 {
+    position: absolute;
+    top: 1475px;
+    left: 20px;
+    width: 440px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box9Label {
+    top: 85px;
+    left: -15px;
+}
+
+#box9Item1 {
+    top: 100px;
+}
+
+#whiteTrailerLocation {
+    top: 105px;
+    left: 180px;
+}
+
+#box9Item2 {
+    top: 150px;
+}
+
+#fishInTrailer {
+    top: 155px;
+    left: 350px;
+}
+
+#box10 {
+    position: absolute;
+    top: 1700px;
+    left: 20px;
+    width: 440px;
+    height: 150px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box10Label {
+    top: 60px;
+    left: -15px;
+}
+
+#bacteriaInSinkTens {
+    top: 55px;
+    left: 260px;
+}
+
+#bacteriaInSinkOnes {
+    top: 55px;
+    left: 350px;
+}
+
+#virusInSink {
+    top: 105px;
+    left: 310px;
+}
+
+#box11 {
+    position: absolute;
+    top: 1875px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box11Label {
+    top: 35px;
+    left: -15px;
+}
+
+#thermometerLowTemp {
+    top: 55px;
+    left: 350px;
+}
+
+#box12 {
+    position: absolute;
+    top: 2000px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box12Label {
+    top: 35px;
+    left: -15px;
+}
+
+#timerRedZone {
+    top: 55px;
+    left: 350px;
+}
+
+#box13 {
+    position: absolute;
+    top: 2125px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box13Label {
+    top: 35px;
+    left: -15px;
+}
+
+#groceryUnitsOnTable {
+    top: 55px;
+    left: 350px;
+}
+
+#box14 {
+    position: absolute;
+    top: 2250px;
+    left: 20px;
+    width: 440px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#box14Label {
+    top: 35px;
+    left: -15px;
+}
+
+#touchingEastWall {
+    top: 55px;
+    left: 350px;
+}
+
